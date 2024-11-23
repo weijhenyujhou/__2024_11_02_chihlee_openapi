@@ -1,9 +1,9 @@
-import tool
+import widget
 def main():
     #初始計算次數       
     counter = 0
     while(True):
-        tool.new_func()
+        widget.new_func()
         #每計算過一次加一
         counter +=1
         print(f"=======以上為您第{counter}次輸入後計算的BMI資料=======")
