@@ -1,4 +1,31 @@
 # tool 
+class Person:
+    '''
+    我是person
+    '''
+    def __init__ (self,name:str,age:int):
+        self.name = name
+        self.age = age
+    def echo(self):
+        print(f"我的名子是{self.name}")
+        print(f"我的年紀是{self.age}")
+    
+class student(Person):
+    '''
+    我是student
+    '''
+    def __init__(self,name:str,age:int,score:int):
+        super().__init__(name=name,age=age) #呼叫父類別初始化
+        self.__score =score
+    
+    @property
+    def socre(self)->int:
+        return self.__score
+    
+    def echo(self):
+        super().echo() #呼叫父類別方法
+        print(f"我的分數是:{self.__score}")
+
 
 
 def bmi_status(bmi:float)->str:
@@ -44,4 +71,4 @@ def new_func():
             status = bmi_status(bmi)
             print(f"您輸入的體重:{weight}(Kg)及身高:{height}(cm),\n計算後取得的BMI值約為{bmi:.2f},\n您的BMI被歸類為{status}。")
             break
-        
+
