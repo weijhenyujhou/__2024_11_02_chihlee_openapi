@@ -28,3 +28,5 @@ allData:list[dict] = tools.get_aqi(excel_name='aqi.xlsx')
 select_item:list[dict] = [ item for item in allData if item['sitename']==add_selectbox]
 st.table(data = select_item)
 
+
+
