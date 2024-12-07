@@ -13,7 +13,7 @@ def get_aqi(excel_name: str) -> list[dict]:
     print(column_name)
 
     for row in list(sheet)[1:]:
-        site: dict = {column_name[idx]                      : cell.value for idx, cell in enumerate(row)}
+        site: dict = {column_name[idx]: cell.value for idx, cell in enumerate(row)}
         sheets.append(site)
     return sheets
 
