@@ -14,3 +14,13 @@ def get_aqi(excel_name:str)-> list[dict]:
         site:dict = {column_name[idx]:cell.value for idx, cell in enumerate(row)}
         sheets.append(site)
     return sheets
+
+def get_sitename(excel_name:str)->list[str]:
+    data:list[dict] = get_aqi(excel_name='aqi.xlsx')
+    sitenames:list =[]
+    for item in data:
+        sitenames.append(item['sitename'])
+        #刪除重複的
+    sitenames = list(set(sitenames))
+    return sitenames
+    
