@@ -29,3 +29,5 @@ def get_sitename(excel_name: str) -> list[str]:
 
 
 ###
+
+##macbook
