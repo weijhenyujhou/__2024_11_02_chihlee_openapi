@@ -1,17 +1,19 @@
 from tools import taipei
 import streamlit as st
 
+
 @st.dialog("Cast your vote")
 def vote(error):
     st.write(error)
 
+
 try:
-    youBike_data:list[dict] = taipei.get_youBikes()
-except Exception as error: #修改當連線發生異常時,tools內的異常訊息可以傳遞出來
+    youBike_data: list[dict] = taipei.get_youBikes()
+except Exception as error:  # 修改當連線發生異常時,tools內的異常訊息可以傳遞出來
     vote(error)
     st.write("喝杯咖啡等一下再試")
     st.stop()
 else:
     st.write(youBike_data)
-    
+
 st.table(youBike_data)
