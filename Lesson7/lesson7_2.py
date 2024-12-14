@@ -12,7 +12,7 @@ r_1:Response = requests.request('Get',url)
 try:
     r:Response = requests.request('GET',url)
     r.raise_for_status()   
-except HTTPError as e:
+except HTTPError as e: #例外處理
     print(e)
 except RequestException as e:
     print(e)
