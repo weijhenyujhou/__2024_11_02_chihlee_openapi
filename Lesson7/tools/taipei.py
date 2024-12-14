@@ -1,4 +1,3 @@
-
 #將tools.py 轉換成package tools資料夾內__init__.py檔
 import requests
 from io import StringIO
