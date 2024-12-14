@@ -1,4 +1,4 @@
 import tools
 
-youBike_data:list[dic] = tools.get_youBikes()
+youBike_data:list[dict] = tools.get_youBikes()
 print(youBike_data)

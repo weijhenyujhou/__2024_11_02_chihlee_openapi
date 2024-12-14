@@ -23,3 +23,5 @@ else:
     list_reader:list[dict] = list(reader)
     for row in list_reader: # reader是一個generator的實體
         print(row)
+        
+# 最後模組化下載資料的功能 放入tools內
