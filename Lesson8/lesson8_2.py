@@ -3,7 +3,7 @@ import streamlit as st
 if "counter" not in st.session_state:
     #st.session_state["counter"] = 0
     st.session_state.counter = 1
-
+## 這裡的kwargs是一個dict
 def increment_counter(**kwargs):
     st.session_state.counter += kwargs['first']
     st.session_state.counter -= kwargs['second']
