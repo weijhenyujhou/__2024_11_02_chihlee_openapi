@@ -1,3 +1,6 @@
+#此程式碼主要流程
+ # 閉鎖記憶體Closure Memory
+
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -77,7 +80,8 @@ if prompt:
     # 使用 TFLite 模型進行預測
     predict_value = tflite_predict_func(test_input)
     
-    # 將預測結果中的第一個數值取整數，並轉換為浮點數型別後四捨五入
+    # 將預測結果中的第一個數值取整數，並轉換為浮點數型別後四捨五入 
+    # 抓出predicted value 第一個數值
     round_value = round(float(predict_value[0, 0]))
     
     # 顯示輸入值 X 和對應的預測值 Y
