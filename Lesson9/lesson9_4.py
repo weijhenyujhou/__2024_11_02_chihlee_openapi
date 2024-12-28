@@ -57,12 +57,28 @@ def load_and_use_tflite(tflite_model_path):
 st.title('1元1次方程式')
 st.title('Y = 2X - 1')
 
+# 提供一個聊天輸入框，提示使用者輸入 X 的值
 prompt = st.chat_input("請輸入X的值:")
+
+# 如果使用者有輸入值，進行以下處理
 if prompt:
+    # 將輸入的值轉換為浮點數
     input_value = float(prompt)
+    
+    # 定義 TensorFlow Lite 模型檔案的路徑
     tflite_model_path = 'linear_model.tflite'
+    
+    # 使用自定義函數載入並初始化 TFLite 模型的預測功能
     tflite_predict_func = load_and_use_tflite(tflite_model_path)
+    
+    # 將輸入值轉換為測試輸入格式 (這裡假設模型需要一個列表作為輸入)
     test_input = [input_value]
+    
+    # 使用 TFLite 模型進行預測
     predict_value = tflite_predict_func(test_input)
+    
+    # 將預測結果中的第一個數值取整數，並轉換為浮點數型別後四捨五入
     round_value = round(float(predict_value[0, 0]))
+    
+    # 顯示輸入值 X 和對應的預測值 Y
     st.write(f"X={input_value},Y={round_value}")
